@@ -1,0 +1,28 @@
+<div id="m1"></div> 
+<script type="text/javascript"> 
+window.onload=function(){daojishi()}; 
+
+	var minitus = 4;
+	var second = 60;
+
+
+	function daojishi() 
+	{ 
+	  if(second ==0){
+	  	minitus--;
+	  	second = 60;
+	  }
+	  if(minitus == -1){
+	  	var str = "距离结束0分0秒 ";
+	  	document.getElementById("m1").innerHTML= str;
+	  	alert('over');
+	  	exit;
+	  }else{
+	  	var str = "距离结束"+minitus+" 分 "+second+" 秒 ";
+	  	document.getElementById("m1").innerHTML= str;
+	  	second--;
+	  	setTimeout(function (){daojishi()},1000)
+	  }
+	}
+
+</script>
